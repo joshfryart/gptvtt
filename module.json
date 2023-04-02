@@ -1,37 +1,23 @@
 {
-  "name": "gptvtt",
-  "title": "GPT-VTT",
-  "description": "A custom module for Foundry VTT that adds integration with the OpenAI API. You can use it to create new actors, scenes, journal entries, rollable tables, or output to chat.",
-  "author": "GPT3.5 and JoshFry.art",
-  "version": "1.0.0",
-  "minimumCoreVersion": "0.7.0",
-  "compatibleCoreVersion": "10",
-  "packs": [
+  "id": "ai-description-generator",
+  "title": "AI Description Generator",
+  "description": "Utilizes the GPT-3 AI to generate descriptions from within Foundry.",
+  "version": "1.6.0",
+  "authors": [
     {
-      "name": "gptvtt-macros",
-      "label": "GPT-VTT Macros",
-      "path": "packs/macros.json",
-      "entity": "Macro"
+      "name": "Pepijn Sietsema",
+      "url": "https://ko-fi.com/pepijn",
+      "flags": {}
     }
   ],
-  "scripts": [
-    "scripts/ai.js",
+  "compatibility": {
+    "minimum": "10",
+    "verified": "10"
+  },
+  "esmodules": [
     "scripts/main.js"
-	"scripts/menu.js"
   ],
-  "templates": [
-    "templates/menu.html"
-  ],
-  "styles": [],
-  "esmodules": [],
-  "dependencies": [],
-  "system": "",
-  "url": "https://github.com/joshfryart/gptvtt",
-  "manifest": "https://raw.githubusercontent.com/joshfryart/gptvtt/main/module.json",
-  "download": "https://github.com/joshfryart/gptvtt/archive/main.zip",
-  "license": "MIT",
-  "readme": "README.md",
-  "bugs": "https://github.com/joshfryart/gptvtt/issues",
-  "changelog": "https://github.com/joshfryart/gptvtt/releases",
-  "config": "config.xml"
+  "url": "https://github.com/PepijnMC/FoundryVTT-AI-Description-Generator",
+  "manifest": "https://github.com/PepijnMC/FoundryVTT-AI-Description-Generator/releases/latest/download/module.json",
+  "download": "https://github.com/PepijnMC/FoundryVTT-AI-Description-Generator/releases/latest/download/module.zip"
 }
