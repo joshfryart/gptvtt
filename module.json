@@ -6,7 +6,7 @@
   "version": "1.0.0",
   "minimumCoreVersion": "0.7.0",
   "compatibleCoreVersion": "10",
-    "packs": [
+  "packs": [
     {
       "name": "gptvtt-macros",
       "label": "GPT-VTT Macros",
@@ -17,7 +17,10 @@
   "scripts": [
     "scripts/ai.js",
     "scripts/main.js",
-	"scripts/menu.js"
+    "scripts/menu.js"
+  ],
+  "templates": [
+    "templates/menu.html"
   ],
   "styles": [],
   "esmodules": [],
