@@ -1,0 +1,9 @@
+[
+  {
+    "name": "OpenAIPrompt",
+    "type": "script",
+    "scope": "global",
+    "command": "openAIPrompt();",
+    "img": "icons/svg/d20-black.svg"
+  }
+]
