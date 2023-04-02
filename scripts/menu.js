@@ -2,35 +2,41 @@ class GPTVTTMenu extends FormApplication {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       id: "gptvtt-menu",
-      title: "GPTVTT Menu",
-      template: "templates/settings/menu.html",
-      classes: ["sheet"],
-      width: 500,
+      title: "GPT-VTT Menu",
+      template: "modules/gptvtt/templates/menu.html",
+      classes: ["gptvtt"],
+      width: 400,
       height: "auto",
-      closeOnSubmit: false,
+      closeOnSubmit: true,
       submitOnClose: false,
-      submitOnChange: true
+      submitOnChange: false,
+      resizable: true
     });
   }
 
-  async getData() {
+  getData() {
     return {
-      openai_key: game.settings.get("gptvtt", "openai_key")
+      openAIPrompt: game.i18n.localize("GPTVTT.OpenAIPrompt")
     };
   }
 
-  async _updateObject(event, formData) {
-    await game.settings.set("gptvtt", "openai_key", formData.openai_key);
+  activateListeners(html) {
+    super.activateListeners(html);
+    html.find("#gptvtt-button").click(this._onButtonClick.bind(this));
+  }
+
+  async _onButtonClick(event) {
+    event.preventDefault();
+    openAIPrompt();
+    this.close();
   }
 }
 
-// Register the menu
 Hooks.once("init", () => {
-  game.settings.registerMenu("gptvtt", "gptvtt-menu", {
-    name: "GPTVTT Menu",
-    label: "GPTVTT Menu",
-    hint: "Open the GPTVTT module menu",
-    icon: "fas fa-dragon",
+  game.settings.registerMenu("gptvtt", "gptvttMenu", {
+    name: "GPT-VTT Menu",
+    label: "GPTVTT MENU",
+    hint: "Open the GPT-VTT menu",
     type: GPTVTTMenu,
     restricted: false
   });
