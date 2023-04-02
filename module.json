@@ -16,8 +16,7 @@
   ],
   "scripts": [
     "scripts/ai.js",
-    "scripts/main.js",
-    "scripts/menu.js"
+    "scripts/main.js"
   ],
   "templates": [
     "templates/menu.html"

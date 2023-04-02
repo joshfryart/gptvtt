@@ -1,4 +1,14 @@
 import { openAIAPI } from "./ai.js";
+Hooks.once('init', async function () {
+  game.settings.register('gptvtt', 'openai_key', {
+    name: 'OpenAI API Key',
+    hint: 'Enter your OpenAI API key here',
+    scope: 'world',
+    config: true,
+    type: String,
+    default: '',
+  });
+});
 function openAIPrompt() {
   const systemPrompt = "You are the best game master in the world, and know all the tabletop RPGs like D&D 5th edition, Pathfinder 2nd edition, and so forth. You are an expert today on {{SYSTEM}}.";
 
