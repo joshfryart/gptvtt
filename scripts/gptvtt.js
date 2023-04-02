@@ -56,10 +56,24 @@ Hooks.once("init", function() {
   }
 
   // Add chat command to send prompt to OpenAI API
-  Hooks.on("chatMessage", async (chatLog, messageText) => {
-    if (messageText.startsWith("/gpt ")) {
-      const prompt = messageText.slice(5);
-      game.socket.emit("module.gptvtt", { prompt: prompt });
-    }
+  Hooks.on('ready', () => {
+    game.socket.on('module.gptvtt', async (data) => {
+      if (game.user.isGM) {
+        const prompt = data.prompt;
+        const response = await openAIAPI(prompt);
+        if (response && response !== "") {
+          ChatMessage.create({ content: response }, {});
+        } else {
+          ui.notifications.error('OpenAI response was empty');
+        }
+      }
+    });
+
+    Hooks.on('chatMessage', async (chatLog, messageText, chatData) => {
+      if (messageText.startsWith('/gpt ')) {
+        const prompt = messageText.slice(5);
+        game.socket.emit('module.gptvtt', { prompt });
+      }
+    });
   });
 });
