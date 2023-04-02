@@ -1,0 +1,11 @@
+{
+  "name": "gptvtt",
+  "title": "GPTVTT Module",
+  "version": "1.0.0",
+  "description": "A Foundry VTT module that integrates the OpenAI API.",
+  "author": "GPT3.5 and JoshFry.art",
+  "files": [
+    "scripts/ai.js"
+	"scripts/main.js"
+  ]
+}
