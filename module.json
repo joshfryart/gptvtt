@@ -6,13 +6,21 @@
   "version": "1.0.0",
   "minimumCoreVersion": "0.7.0",
   "compatibleCoreVersion": "10",
+    "packs": [
+    {
+      "name": "gptvtt-macros",
+      "label": "GPT-VTT Macros",
+      "path": "packs/macros.json",
+      "entity": "Macro"
+    }
+  ],
   "scripts": [
     "scripts/ai.js",
-    "scripts/main.js"
+    "scripts/main.js",
+	"scripts/menu.js"
   ],
   "styles": [],
   "esmodules": [],
-  "packs": [],
   "dependencies": [],
   "system": "",
   "url": "https://github.com/joshfryart/gptvtt",
